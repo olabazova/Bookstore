@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title><%= @page_title ? @page_title : 'Welcome' %> | The Bookstore</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+
+  <body>
+
+
+<nav class="navbar navbar-light bg-light p-3 fixed-top">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+     <%= link_to 'Home', root_path, :class => "nav-link #{params[:controller] == 'books' ? 'active' : ''}" %>
+    </li>
+     <li class="nav-item">
+      <%= link_to 'About', about_path, :class => "nav-link #{params[:controller] == 'about' ? 'active' : ''}" %>
+    </li>
+   <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="ddMenu" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Add New</a>
+    <div class="dropdown-menu" aria-labelledby="ddMenu">
+     <%= link_to 'Book', new_book_path %>
+     <br />
+     <%= link_to 'Category', new_category_path %>
+     <br />
+     <%= link_to 'Author', new_author_path %>
+     <br />
+     <%= link_to 'Publisher', new_publisher_path %>
+    </div>
+  </li>
+
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="ddMenu" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manage</a>
+    <div class="dropdown-menu" aria-labelledby="ddMenu">
+     <%= link_to 'Categories', categories_path %>
+     <br />
+     <%= link_to 'Authors', authors_path %>
+     <br />
+     <%= link_to 'Publishers', publishers_path %>
+    </div>
+  </li>
+
+
+  </ul>
+
+</nav>
+
+<header>
+  <div class="container">
+    <h1>The Bookstore <small><%= @page_title ? @page_title : 'Welcome' %></small></h1>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <% if flash[:notice] %>
+          <div class="alert alert-success"><%= flash[:notice] %></div>
+        <% end %>
+
+        <% if flash[:alert] %>
+          <div class="alert alert-danger"><%= flash[:alert] %></div>
+        <% end %>
+
+        <%= yield %>
+      </div>
+    <div class="col-md-4">
+      <%= render 'partials/sidebar' %>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Copyright &copy;  2019
+  </div>
+</footer>
+
+  </body>
+</html>

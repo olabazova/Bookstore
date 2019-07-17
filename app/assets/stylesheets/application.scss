@@ -1,0 +1,94 @@
+@import "bootstrap";
+
+
+body {
+	padding-top: 80px;
+	font-family: 'Arial', sans-serif;
+	font-size: 14px;
+	font-color: #666;
+	line-height: 1.5em;
+}
+
+header {
+    padding-top: 30px;
+	background-color: #333;
+	color: #FFF;
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+footer {
+	background-color: #333;
+	color: #FFF;
+	height: 40px;
+	margin-bottom: 20px;
+	padding-top:10px;
+	text-align: center;
+}
+
+nav a{
+	color: #000;
+	text-decoration: none;
+}
+
+nav a:hover{
+	text-decoration: none;
+}
+
+nav li{
+	padding:10px;
+}
+
+nav .dropdown-menu {
+	padding-left:20px;
+}
+
+
+
+#books-index {
+	text-align:center;
+}
+
+#books-index img {
+	width:100%;
+	padding: 3px;
+	border: 1px #ccc solid;
+}
+
+#books-index h3 {
+	height:80px;
+}
+
+#books-index .btn {
+	display:block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+#books-show h2 {
+	background: #f4f4f4;
+	padding:10px;
+}
+
+#books-show .books-show-left {
+	float:left;
+	width:40%;
+}
+
+#books-show .books-show-left img {
+	width:90%;
+}
+
+#books-show .books-show-right {
+	float:left;
+	width:60%;
+	margin-top:10px;
+}
+
+#books-show .btn {
+	margin: 20px 0 0 70px;
+}
+
+
+

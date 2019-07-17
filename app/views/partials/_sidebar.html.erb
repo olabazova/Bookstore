@@ -1,0 +1,20 @@
+<% if params[:controller] == 'about' %>
+	<div class="jumbotron">
+	<h3>Location Info:</h3>
+	<ul>
+		<li>Chicago Greater Area</li>
+		<li>Phone: 111-111-1111</li>
+		<li>Email: admin@mytestsite.com</li>
+	</ul>
+	</div>
+<% end %>
+
+<% if params[:controller] == 'books' && params[:action] == 'index' || params[:action] == 'show' %>
+
+	<div class="list-group">
+		<% @categories.each do |category| %>
+			<%= link_to category.name, category_path(category.id), class:'list-group-item list-group-item-action' %>
+	 	<% end %>
+	</div>
+
+<% end %>
